@@ -3,6 +3,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f8f8f8;
+    min-width: 850px;
 }
 
 header {
@@ -89,7 +90,7 @@ h1 {
     left: 0;
     right: 0;
     bottom: 0;
-    display: flex;
+    display: block;
     align-items: center;
     justify-content: center;
 }
