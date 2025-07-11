@@ -11,7 +11,7 @@ const Header = () => {
   const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
 
   return (
-    <header className={darkMode ? "border-b border-gray-200 bg-gray-800 sticky top-0 z-10" : "border-b border-gray-200 bg-white sticky top-0 z-10"}>
+    <header className={darkMode ? "border-b border-gray-700 bg-gray-800 sticky top-0 z-10" : "border-b border-gray-200 bg-white sticky top-0 z-10"}>
       <div className="max-w-4xl mx-auto px-6 py-4">
         <nav className="flex justify-between items-center">
           <Text variant = 'h3' dark = {darkMode} className = "font-bold" >juno kim</Text>
@@ -68,65 +68,62 @@ const ProjectsSection = () => {
     {
       id: 1,
       title: "DealScout",
-      description: "A lightweight chrome extension real estate listing analyzer",
+      description: "A lightweight Chrome Extension real estate listing analyzer",
       technologies: ["Gemini", "Nextplace.ai",],
-      details: `Developed a Chrome extension to evalute to evaluate ROI of Zillow property listings by scraping real estate data, computing valuations with Nextplace.ai, and integrating with Gemini LLM
-Secured $27K+ in grant funding by presenting the project at the 2025 Bittensor Endgame Summit, highlighting its value for decentralized real estate intelligence.
-Integrated Gemini to power an in-extension chat interface offering further property insights using scraped listing data.`,
+      details: `• Developed a Chrome extension to evalute to evaluate ROI of Zillow property listings by scraping real estate data, computing valuations with Nextplace.ai, and integrating with Gemini LLM
+      • Secured $27K+ in grant funding by presenting the project at the 2025 Bittensor Endgame Summit, highlighting its value for decentralized real estate intelligence.
+      • Integrated Gemini to power an in-extension chat interface offering further property insights using scraped listing data.`,
       github: "https://github.com/gurubazawada/extension",
     //   demo: "https://your-ecommerce-demo.com"
     },
     {
-      id: 2,
+      id: 4,
       title: "[WIP] Stockify",
-      description: "A collaborative project management tool with real-time updates",
-      technologies: ["Next.js", "Supabase", "Redis"],
+      description: "A way for artists to monetize their IP through a stock exchange",
+      technologies: ["Next.js", "Supabase", "Redis", "Express"],
       details: `
-      • Engineered a full-stack platform with Next.js front end, integrated with Spotify OAuth and Web API for artists
-      data, and a Node.js/Express backend that computes artist price changes via synthetic micro-tick simulations and
-      real metric interpolations, achieving sub-minute price refreshes and user portfolio recalculations in <200ms
-      • Simulated a real-time exchange for music artists by modeling price volatility using popularity metrics, enabling
-      users to track and trade artist shares`,
+      • Engineered a full-stack platform with Next.js front end, integrated with Spotify OAuth and Web API for artists data, and a Node.js/Express backend that computes artist price changes via synthetic micro-tick simulations and real metric interpolations, achieving sub-minute price refreshes and user portfolio recalculations in <200ms
+      • Simulated a real-time exchange for music artists by modeling price volatility using popularity metrics, enabling users to track and trade artist shares`,
       github: "https://github.com/Neontus/stockify",
       demo: "https://stockify-mocha.vercel.app/"
     },
     {
-      id: 3,
-      title: "[WIP] Rust DJ Software",
-      description: "Data visualization dashboard for weather patterns and forecasts",
+      id: 5,
+      title: "[WIP] RustyDJ",
+      description: "Open-source DJ software built in Rust",
       technologies: ["Rust"],
       details: `Creating free, open-source DJ software in Rust, focusing on performance and real-time audio processing.`,
       github: "https://github.com/Neontus/rustyDJ"
     },
     {
-      id: 5,
+      id: 3,
       title: "Lucidity",
-      description: "Data visualization dashboard for weather patterns and forecasts",
-      technologies: ["React", "D3.js", "Python", "Flask"],
+      description: "Chrome Extension using ML to block unproductive websites",
+      technologies: ["HTML/JS/CSS", "Node.js", "NumPy", "Pandas", "NLTK"],
       details: `
-      Developed a Chrome Extension using HTML/CSS front-end with Node.js-powered backend to block unproductive websites, boosting student productivity by 24%
+      • Developed a Chrome Extension using HTML/CSS front-end with Node.js-powered backend to block unproductive websites, boosting student productivity by 24%
       • Built ML model to classify websites based on textual content using NumPy, Pandas, and NLTK utilizing TF-IDF
       • Deployed and piloted at Los Altos Christian Schools, leading to a provisional patent application (No. 63005219)
       • Awarded City of Palo Alto’s Thinkfund Grant, Conrad Challenge International Finalist, Diamond Challenge Regional Semi-Finalist`,
-      github: "https://github.com/yourusername/weather-dashboard",
+      github: "https://github.com/Neontus/Lucidity_Extension",
       demo: "https://lucidity.ninja"
     },
     {
-      id: 4,
+      id: 2,
       title: "Pennstagram",
       description: "Instagram clone + RAG chatbot | Final Project for NETS 2120: Scalable & Cloud Computing",
-      technologies: ["React", "D3.js", "Python", "Flask"],
+      technologies: ["React", "Node/Express", "AWS S3", "AWS EMR", "AWS EC2", "ChromaDB", "Apache Kafka", "Apache Spark", "Langchain.js", "Docker", "Git"],
       details: `
-      • Built a scalable Instagram-style web app with React supporting real-time social feed using Kafka, hosting backend
-      services on EC2 with Docker, image upload to S3, and RAG chatbot by integrating Langchain
-      • Enabled efficient personalized content ranking using Spark-based adsorption algorithm by processing graph data on
-      Apache Spark and streaming updates with Kafka.`,
-      github: "https://github.com/yourusername/weather-dashboard"
+      • Built a scalable Instagram-style web app with React supporting real-time social feed using Kafka, hosting backend services on EC2 with Docker, image upload to S3, and RAG chatbot by integrating Langchain
+      • Enabled efficient personalized content ranking using Spark-based adsorption algorithm by processing graph data on Apache Spark and streaming updates with Kafka.`,
+      // github: "https://github.com/yourusername/weather-dashboard"
     },
   ];
 
+  projects.sort((a, b) => a.id - b.id);
+
   return (
-    <section id="projects" className={darkMode ? "py-20" : "py-20 bg-gray-50"} style = {darkMode ? {"background-color" : "var(--color-gray-700)"} : {}}>
+    <section id="projects" className={darkMode ? "py-20 bg-gray-900" : "py-20 bg-gray-50"}>
       <div className="max-w-4xl mx-auto px-6">
         <Text variant="h2" dark = {darkMode} className="mb-12 text-center">projects</Text>
         <div className="space-y-6">
@@ -204,7 +201,7 @@ const Portfolio = () => {
             <ProjectsSection />
             <ContactSection />
           </main>
-          <footer className="border-t border-gray-200 py-8">
+          <footer className={darkMode ? "border-t border-gray-700 py-8": "border-t border-gray-200 py-8"}>
             <div className="max-w-4xl mx-auto px-6 text-center">
               <Text dark = {darkMode} variant="small">
                 © 2025 Juno Kim. Built with React and Tailwind CSS.

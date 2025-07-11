@@ -6,7 +6,7 @@ import React, { useContext } from 'react';
 const ContactItem = ({ icon, label, value, href }) => {
     const { darkMode } = useContext(DarkModeContext);
   return (
-    <div className="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors">
+    <div className= {darkMode ? "flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-700 transition-colors" : "flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors"}>
       <Icon icon={icon} size={20} className="text-gray-600" />
       <div>
         <Text variant="small" dark = {darkMode} className="font-medium text-gray-900">{label}</Text>
