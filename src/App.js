@@ -1,3 +1,5 @@
+/* eslint import/no-anonymous-default-export: [2, {"allowArrowFunction": true}] */
+
 import React, { useState, useContext } from 'react';
 import { Github, Mail, Linkedin } from 'lucide-react';
 import DarkModeToggle from './components/atoms/DarkToggle';
