@@ -1,21 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Github, Mail, Linkedin } from 'lucide-react';
+import DarkModeToggle from './components/atoms/DarkToggle';
 import Text from './components/atoms/Text';
 import ProjectCard from './components/molecules/ProjectCard';
 import ContactItem from './components/molecules/ContactItem';
+import { DarkModeContext, DarkModeProvider } from './context/DarkModeContext';
 
 // Organisms
 const Header = () => {
+  const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
+
   return (
-    <header className="border-b border-gray-200 bg-white sticky top-0 z-10">
+    <header className={darkMode ? "border-b border-gray-200 bg-gray-800 sticky top-0 z-10" : "border-b border-gray-200 bg-white sticky top-0 z-10"}>
       <div className="max-w-4xl mx-auto px-6 py-4">
         <nav className="flex justify-between items-center">
-          <Text variant="h3" className="font-bold">juno kim</Text>
+          <Text variant = 'h3' dark = {darkMode} className = "font-bold" >juno kim</Text>
           <div className="flex space-x-6">
             <a href="#about" className="text-gray-600 hover:text-gray-900 transition-colors">about</a>
             <a href="#projects" className="text-gray-600 hover:text-gray-900 transition-colors">projects</a>
             <a href="#contact" className="text-gray-600 hover:text-gray-900 transition-colors">contact</a>
           </div>
+          <DarkModeToggle onToggle = {toggleDarkMode}/>
         </nav>
       </div>
     </header>
@@ -23,17 +28,19 @@ const Header = () => {
 };
 
 const AboutSection = () => {
+  const { darkMode } = useContext(DarkModeContext);
+
   return (
     <section id="about" className="py-20">
       <div className="max-w-4xl mx-auto px-6">
-        <Text variant="h1" className="mb-6">hi, i'm juno</Text>
-        <Text variant="body" className="text-lg mb-8 leading-relaxed">
+        <Text variant="h1" dark = {darkMode} className="mb-6">hi, i'm juno</Text>
+        <Text variant="body" dark = {darkMode} className="text-lg mb-8 leading-relaxed">
             hi! i’m juno, a rising 3rd-year student at the University of Pennsylvania studying CS. 
             my current interests include signal processing, convex optimization, AI/ML, and its applications to various sectors 
             like music, quantitative finance, the physical sciences, and more!
         </Text>
-        <Text variant="body" className="text-lg leading-relaxed">
-            when i'm not coding, you can find me practing a DJ set, updating my beli,
+        <Text variant="body" dark = {darkMode} className="text-lg leading-relaxed">
+            when i'm not coding, you can find me practicing a DJ set, updating my beli,
             taking a run, or window shopping! some of the goals i'm currently working on include:
             <ul className="list-disc pl-6 mt-4">
                 <li>learn + build a project with Rust</li>
@@ -47,6 +54,7 @@ const AboutSection = () => {
 
 const ProjectsSection = () => {
   const [expandedProjects, setExpandedProjects] = useState({});
+  const { darkMode } = useContext(DarkModeContext);
 
   const toggleProject = (id) => {
     setExpandedProjects(prev => ({
@@ -61,17 +69,10 @@ const ProjectsSection = () => {
       id: 1,
       title: "DealScout",
       description: "A lightweight chrome extension real estate listing analyzer",
-      technologies: ["React", "Node.js", "MongoDB", "Stripe"],
-      details: `Built a complete e-commerce platform from scratch with features including:
-
-• User authentication and authorization
-• Product catalog with search and filtering
-• Shopping cart and checkout process
-• Payment integration with Stripe
-• Admin dashboard for inventory management
-• Responsive design for mobile and desktop
-
-The application handles high traffic loads and includes comprehensive testing coverage.`,
+      technologies: ["Gemini", "Nextplace.ai",],
+      details: `Developed a Chrome extension to evalute to evaluate ROI of Zillow property listings by scraping real estate data, computing valuations with Nextplace.ai, and integrating with Gemini LLM
+Secured $27K+ in grant funding by presenting the project at the 2025 Bittensor Endgame Summit, highlighting its value for decentralized real estate intelligence.
+Integrated Gemini to power an in-extension chat interface offering further property insights using scraped listing data.`,
       github: "https://github.com/gurubazawada/extension",
     //   demo: "https://your-ecommerce-demo.com"
     },
@@ -125,9 +126,9 @@ The application handles high traffic loads and includes comprehensive testing co
   ];
 
   return (
-    <section id="projects" className="py-20 bg-gray-50">
+    <section id="projects" className={darkMode ? "py-20" : "py-20 bg-gray-50"} style = {darkMode ? {"background-color" : "var(--color-gray-700)"} : {}}>
       <div className="max-w-4xl mx-auto px-6">
-        <Text variant="h2" className="mb-12 text-center">projects</Text>
+        <Text variant="h2" dark = {darkMode} className="mb-12 text-center">projects</Text>
         <div className="space-y-6">
           {projects.map((project) => (
             <ProjectCard
@@ -144,6 +145,7 @@ The application handles high traffic loads and includes comprehensive testing co
 };
 
 const ContactSection = () => {
+  const { darkMode } = useContext(DarkModeContext);
   const contactInfo = [
     {
       icon: Mail,
@@ -168,9 +170,9 @@ const ContactSection = () => {
   return (
     <section id="contact" className="py-20">
       <div className="max-w-4xl mx-auto px-6">
-        <Text variant="h2" className="mb-12 text-center">contact me</Text>
+        <Text variant="h2" dark = {darkMode} className="mb-12 text-center">contact me</Text>
         <div className="max-w-md mx-auto">
-          <Text variant="body" className="text-center mb-8 text-lg">
+          <Text variant="body" dark = {darkMode} className="text-center mb-8 text-lg">
             i'm always interested in new ventures, ideas, and a chat.
             feel free to reach out!
           </Text>
@@ -193,23 +195,38 @@ const ContactSection = () => {
 
 // Template (Main App)
 const Portfolio = () => {
+  const { darkMode } = useContext(DarkModeContext);
   return (
-    <div className="min-h-screen bg-white">
-      <Header />
-      <main>
-        <AboutSection />
-        <ProjectsSection />
-        <ContactSection />
-      </main>
-      <footer className="border-t border-gray-200 py-8">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <Text variant="small">
-            © 2025 Juno Kim. Built with React and Tailwind CSS.
-          </Text>
+    <div className={darkMode ? "min-h-screen bg-gray-800" : "min-h-screen bg-white"}>
+          <Header />
+          <main>
+            <AboutSection />
+            <ProjectsSection />
+            <ContactSection />
+          </main>
+          <footer className="border-t border-gray-200 py-8">
+            <div className="max-w-4xl mx-auto px-6 text-center">
+              <Text dark = {darkMode} variant="small">
+                © 2025 Juno Kim. Built with React and Tailwind CSS.
+              </Text>
+            </div>
+          </footer>
         </div>
-      </footer>
-    </div>
   );
 };
 
-export default Portfolio;
+// const Page = () => {
+//   <DarkModeProvider>
+//     <Portfolio />
+//   </DarkModeProvider>
+// }
+
+// export default Page;
+
+export default () => {
+  return (
+    <DarkModeProvider>
+      <Portfolio />
+    </DarkModeProvider>
+  );
+};

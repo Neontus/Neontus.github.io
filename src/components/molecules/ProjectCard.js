@@ -1,16 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Text from '../atoms/Text';
 import Button from '../atoms/Button';
 import Icon from '../atoms/Icon';
 import { ChevronDown, ChevronUp, Github, ExternalLink } from 'lucide-react';
+import { DarkModeContext } from '../../context/DarkModeContext';
 
 const ProjectCard = ({ project, isExpanded, onToggle }) => {
+    const { darkMode } = useContext(DarkModeContext);
   return (
     <div className="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow duration-200">
       <div className="flex justify-between items-start mb-4">
         <div className="flex-1">
-          <Text variant="h3" className="mb-2">{project.title}</Text>
-          <Text variant="body" className="mb-3">{project.description}</Text>
+          <Text variant="h3" dark = {darkMode} className="mb-2">{project.title}</Text>
+          <Text variant="body" dark = {darkMode} className="mb-3">{project.description}</Text>
           <div className="flex flex-wrap gap-2 mb-4">
             {project.technologies.map((tech, index) => (
               <span 
@@ -34,7 +36,7 @@ const ProjectCard = ({ project, isExpanded, onToggle }) => {
       
       {isExpanded && (
         <div className="border-t border-gray-100 pt-4 mt-4">
-          <Text variant="body" className="mb-4 whitespace-pre-line">
+          <Text variant="body" dark = {darkMode} className="mb-4 whitespace-pre-line">
             {project.details}
           </Text>
           <div className="flex gap-3">

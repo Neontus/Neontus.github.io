@@ -1,8 +1,8 @@
 {
-  "name": "my-portfolio",
+  "name": "neontus",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://Neontus.github.io",
+  "homepage": "https://neontus.github.io",
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
