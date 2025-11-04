@@ -6,6 +6,7 @@ import DarkModeToggle from './components/atoms/DarkToggle';
 import Text from './components/atoms/Text';
 import ProjectCard from './components/molecules/ProjectCard';
 import ContactItem from './components/molecules/ContactItem';
+import ResumeSection from './components/organisms/ResumeSection';
 import { DarkModeContext, DarkModeProvider } from './context/DarkModeContext';
 
 // Organisms
@@ -20,6 +21,7 @@ const Header = () => {
           <div className="flex space-x-6">
             <a href="#about" className="text-gray-600 hover:text-gray-900 transition-colors">about</a>
             <a href="#projects" className="text-gray-600 hover:text-gray-900 transition-colors">projects</a>
+            <a href="#resume" className="text-gray-600 hover:text-gray-900 transition-colors">resume</a>
             <a href="#contact" className="text-gray-600 hover:text-gray-900 transition-colors">contact</a>
           </div>
           <DarkModeToggle onToggle = {toggleDarkMode}/>
@@ -167,7 +169,7 @@ const ContactSection = () => {
   ];
 
   return (
-    <section id="contact" className="py-20">
+    <section id="contact" className={darkMode ? "py-20 bg-gray-900" : "py-20 bg-gray-50"}>
       <div className="max-w-4xl mx-auto px-6">
         <Text variant="h2" dark = {darkMode} className="mb-12 text-center">contact me</Text>
         <div className="max-w-md mx-auto">
@@ -201,6 +203,7 @@ const Portfolio = () => {
           <main>
             <AboutSection />
             <ProjectsSection />
+            <ResumeSection />
             <ContactSection />
           </main>
           <footer className={darkMode ? "border-t border-gray-700 py-8": "border-t border-gray-200 py-8"}>
