@@ -1,7 +1,5 @@
 import React, { useContext } from 'react';
 import { Download } from 'lucide-react';
-import Text from '../atoms/Text';
-import Button from '../atoms/Button';
 import { DarkModeContext } from '../../context/DarkModeContext';
 
 const ResumeSection = () => {
@@ -17,38 +15,50 @@ const ResumeSection = () => {
   };
 
   return (
-    <section id="resume" className="py-20">
-      <div className="max-w-4xl mx-auto px-6">
-        <Text variant="h2" dark={darkMode} className="mb-12 text-center">resume</Text>
+    <section id="resume" className={`py-24 ${darkMode ? 'bg-zinc-950' : 'bg-white'}`}>
+      <div className="max-w-5xl mx-auto px-6">
 
-        <div className="flex flex-col gap-6">
-          {/* PDF Viewer Container */}
-          <div className={`rounded-lg border-2 overflow-hidden ${
-            darkMode
-              ? 'border-gray-700 bg-gray-900'
-              : 'border-gray-200 bg-gray-50'
-          }`}>
+        <div className="mb-14">
+          <p className={`font-mono text-xs tracking-[0.22em] uppercase mb-3 ${darkMode ? 'text-purple-400' : 'text-purple-600'}`}>
+            ✦ experience & education
+          </p>
+          <h2 className={`text-4xl font-black ${darkMode ? 'text-white' : 'text-zinc-900'}`}>
+            resume
+          </h2>
+        </div>
+
+        <div className="flex flex-col gap-5">
+          {/* PDF viewer */}
+          <div
+            className={`rounded-xl overflow-hidden border ${
+              darkMode ? 'border-white/[0.07]' : 'border-zinc-200'
+            }`}
+          >
             <iframe
               src="/resume.pdf"
               width="100%"
-              height="600"
+              height="700"
               title="Juno Kim Resume"
-              className="w-full"
-              style={{ minHeight: '600px' }}
+              className="w-full block"
+              style={{ minHeight: '700px' }}
             />
           </div>
 
-          {/* Download Button */}
-          <div className="flex justify-center">
-            <Button
-              variant={darkMode ? 'primary_dark' : 'primary'}
-              size="md"
+          {/* Download button */}
+          <div className="flex">
+            <button
               onClick={handleDownload}
-              className="flex items-center gap-2"
+              className="flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold text-white transition-all duration-300"
+              style={{
+                background: 'linear-gradient(135deg, #a855f7, #6366f1)',
+                boxShadow: '0 0 20px rgba(168,85,247,0.28)',
+              }}
+              onMouseEnter={(e) => { e.currentTarget.style.boxShadow = '0 0 36px rgba(168,85,247,0.5)'; }}
+              onMouseLeave={(e) => { e.currentTarget.style.boxShadow = '0 0 20px rgba(168,85,247,0.28)'; }}
             >
-              <Download size={18} />
+              <Download size={15} />
               Download Resume
-            </Button>
+            </button>
           </div>
         </div>
       </div>
