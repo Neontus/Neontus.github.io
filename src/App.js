@@ -118,7 +118,7 @@ const AboutSection = () => {
           {['cs @ upenn', 'signal processing', 'ai/ml', 'dj'].map((tag, i) => (
             <React.Fragment key={tag}>
               {i > 0 && (
-                <span className={`text-sm mx-2 ${darkMode ? 'text-purple-500/40' : 'text-purple-400/50'}`}>//</span>
+                <span className={`text-sm mx-2 ${darkMode ? 'text-purple-500/40' : 'text-purple-400/50'}`}>{'// '}</span>
               )}
               <span className={`text-sm font-mono ${darkMode ? 'text-zinc-400' : 'text-zinc-500'}`}>
                 {tag}
