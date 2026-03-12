@@ -1,2 +1,14 @@
-node_modules
-package-lock.json
+# dependencies
+node_modules/
+
+# next.js
+.next/
+out/
+
+# misc
+.DS_Store
+*.tsbuildinfo
+next-env.d.ts
+
+# Obsidian vault symlink — local only
+agent_docs
