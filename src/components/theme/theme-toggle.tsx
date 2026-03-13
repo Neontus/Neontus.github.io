@@ -5,16 +5,28 @@ import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Sun, Moon } from "lucide-react";
 
+const THEME_STORAGE_KEY = "theme";
+
 export function ThemeToggle() {
-  const { theme, setTheme } = useTheme();
+  const { theme, resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const buttonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => setMounted(true), []);
 
+  // next-themes bug: first setTheme() only writes to localStorage and doesn't
+  // apply the class when defaultTheme is "system" and storage is empty.
+  // Prime storage on first load so the first user click applies correctly.
+  useEffect(() => {
+    if (!mounted || typeof window === "undefined") return;
+    if (window.localStorage.getItem(THEME_STORAGE_KEY) != null) return;
+    const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    setTheme(isDark ? "dark" : "light");
+  }, [mounted, setTheme]);
+
   if (!mounted) return <div className="w-10 h-10" />;
 
-  const isDark = theme === "dark";
+  const isDark = resolvedTheme === "dark";
 
   const handleToggle = () => {
     const btn = buttonRef.current;

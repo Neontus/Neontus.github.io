@@ -12,6 +12,28 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: 1,
+    title: "Taurus",
+    description: "Chrome extension injecting Polymarket prediction markets into X/Twitter",
+    technologies: ["React", "Vite", "Fastify", "TypeScript", "OpenAI", "Polymarket"],
+    details: [
+      "Built a Chrome extension (Manifest V3) using React + Vite that injects real-time Polymarket prediction market widgets into X.com tweets via Shadow DOM for full style isolation",
+      "Built a Fastify/TypeScript backend with hybrid tweet-to-market matching using 40% keyword + 60% semantic scoring, trade execution via Polymarket CLOB, and page-level AI insights powered by GPT-4o-mini",
+      "Implemented auto-exit rules with AI confirmation, dual wallet support (guest PolyPoints vs MetaMask + USDC), and real-time position tracking with PnL monitoring",
+    ],
+  },
+  {
+    id: 2,
+    title: "VeriRAG",
+    description: "Open standard and Python library for tamper-proof AI audit trails",
+    technologies: ["Python", "Merkle trees", "LangChain", "Claude API", "SHA-256"],
+    details: [
+      "Open-source cryptographic verification for RAG/LLM interaction logs: Merkle trees prove logs haven't been modified — a gap no existing AI observability platform (Arize, LangSmith, etc.) addresses.",
+      "Designed for EU AI Act Article 12 tamper-resistant logging and compliance: 3-line integration, CLI verifier (verirag verify), LangChain callback + Claude API wrapper; canonical log schema with request/response hashes and proof bundles.",
+      "Open-source-first strategy (ship library → ecosystem → productize); positioning analogous to VeritasChain VCP for algorithmic trading, but for general RAG/LLM workloads.",
+    ],
+  },
+  {
+    id: 3,
     title: "DealScout",
     description: "Chrome Extension for real estate listing analysis",
     technologies: ["Gemini", "Nextplace.ai"],
@@ -23,7 +45,7 @@ export const projects: Project[] = [
     github: "https://github.com/gurubazawada/extension",
   },
   {
-    id: 2,
+    id: 4,
     title: "Pennstagram",
     description: "Instagram clone + RAG chatbot — NETS 2120 final project",
     technologies: [
@@ -44,7 +66,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: 3,
+    id: 5,
     title: "Lucidity",
     description: "Chrome Extension using ML to block unproductive websites",
     technologies: ["HTML/JS/CSS", "Node.js", "NumPy", "Pandas", "NLTK"],
@@ -58,18 +80,7 @@ export const projects: Project[] = [
     demo: "https://lucidity.ninja",
   },
   {
-    id: 4,
-    title: "Taurus",
-    description: "Chrome extension injecting Polymarket prediction markets into X/Twitter",
-    technologies: ["React", "Vite", "Fastify", "TypeScript", "OpenAI", "Polymarket"],
-    details: [
-      "Built a Chrome extension (Manifest V3) using React + Vite that injects real-time Polymarket prediction market widgets into X.com tweets via Shadow DOM for full style isolation",
-      "Built a Fastify/TypeScript backend with hybrid tweet-to-market matching using 40% keyword + 60% semantic scoring, trade execution via Polymarket CLOB, and page-level AI insights powered by GPT-4o-mini",
-      "Implemented auto-exit rules with AI confirmation, dual wallet support (guest PolyPoints vs MetaMask + USDC), and real-time position tracking with PnL monitoring",
-    ],
-  },
-  {
-    id: 5,
+    id: 6,
     title: "Stockify",
     description: "A way for artists to monetize their IP through a stock exchange",
     technologies: ["Next.js", "Supabase", "Redis", "Express"],
@@ -82,7 +93,7 @@ export const projects: Project[] = [
     hidden: true,
   },
   {
-    id: 6,
+    id: 7,
     title: "RustyDJ",
     description: "Open-source DJ software built in Rust",
     technologies: ["Rust"],
