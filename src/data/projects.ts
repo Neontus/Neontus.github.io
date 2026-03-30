@@ -6,6 +6,7 @@ export interface Project {
   details: string[];
   github?: string;
   demo?: string;
+  twitter?: string;
   hidden?: boolean;
 }
 
@@ -43,6 +44,7 @@ export const projects: Project[] = [
       "Integrated Gemini to power an in-extension chat interface offering further property insights using scraped listing data",
     ],
     github: "https://github.com/gurubazawada/extension",
+    twitter: "https://x.com/Dorm_DAO/status/1889078965148532917",
   },
   {
     id: 4,

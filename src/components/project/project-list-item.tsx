@@ -23,11 +23,11 @@ export function ProjectListItem({
         onClick={onToggle}
         className="w-full py-4 flex items-center justify-between gap-4 text-left group"
       >
-        <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-3 min-w-0">
-          <h3 className="font-serif text-xl sm:text-2xl truncate">
+        <div className="flex items-baseline justify-between flex-1 min-w-0 gap-4">
+          <h3 className="font-serif text-xl sm:text-2xl flex-shrink-0">
             {project.title}
           </h3>
-          <p className="text-sm text-muted-foreground truncate">
+          <p className="text-sm text-muted-foreground truncate text-right">
             {project.description}
           </p>
         </div>

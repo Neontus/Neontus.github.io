@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { expandCollapse } from "@/lib/animations";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, Github, Twitter } from "lucide-react";
 import type { Project } from "@/data/projects";
 
 interface ProjectDetailProps {
@@ -54,6 +54,17 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
               >
                 <ExternalLink size={14} />
                 demo
+              </a>
+            )}
+            {project.twitter && (
+              <a
+                href={project.twitter}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <Twitter size={14} />
+                x
               </a>
             )}
           </div>
