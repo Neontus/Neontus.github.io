@@ -1,0 +1,42 @@
+User-agent: *
+Allow: /
+
+# Allow bots to access JSON endpoints for LLM/AI analysis
+Allow: /projects.json
+Allow: /profile.json
+Allow: /resume.json
+
+# Sitemap location
+Sitemap: https://neontus.github.io/sitemap.xml
+
+# Common crawl delay (optional)
+Crawl-delay: 1
+
+# Allow all major search engines and AI bots
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+# AI/LLM bots
+User-agent: GPTBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: CCBot
+Allow: /

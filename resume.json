@@ -1,0 +1,173 @@
+{
+  "basics": {
+    "name": "Juno Kim",
+    "label": "Computer Science Student",
+    "email": "junokimzone@gmail.com",
+    "summary": "Computer Science student at the University of Pennsylvania specializing in signal processing, optimization, and AI/ML. Full-stack developer with experience building Chrome extensions, web applications, and machine learning systems. Track record of securing grants and patents for innovative projects.",
+    "location": {
+      "city": "Philadelphia",
+      "region": "PA",
+      "countryCode": "US"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "junokimzone", 
+        "url": "https://linkedin.com/in/junokimzone"
+      },
+      {
+        "network": "GitHub",
+        "username": "Neontus",
+        "url": "https://github.com/Neontus"
+      }
+    ]
+  },
+  "education": [
+    {
+      "institution": "University of Pennsylvania",
+      "area": "Computer Science",
+      "studyType": "Bachelor of Science in Engineering",
+      "startDate": "2022",
+      "endDate": "2026",
+      "gpa": "",
+      "courses": [
+        "NETS 2120 - Scalable and Cloud Computing"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "name": "Programming Languages",
+      "keywords": ["TypeScript", "JavaScript", "Python", "Rust", "HTML", "CSS"]
+    },
+    {
+      "name": "Frameworks & Libraries", 
+      "keywords": ["React", "Next.js", "Node.js", "Express", "Vite", "LangChain", "NumPy", "Pandas", "NLTK"]
+    },
+    {
+      "name": "Tools & Platforms",
+      "keywords": ["Chrome Extensions", "AWS", "Apache Kafka", "Apache Spark", "Docker", "Figma", "Git"]
+    },
+    {
+      "name": "Databases",
+      "keywords": ["ChromaDB", "Supabase", "Redis"]
+    },
+    {
+      "name": "Specializations",
+      "keywords": ["Full Stack Development", "Machine Learning", "UX/UI Design", "Signal Processing", "Optimization", "Cryptography"]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Taurus",
+      "description": "Chrome extension injecting Polymarket prediction markets into X/Twitter", 
+      "highlights": [
+        "Built Chrome extension (Manifest V3) using React + Vite with Shadow DOM integration",
+        "Developed Fastify/TypeScript backend with 40% keyword + 60% semantic scoring",
+        "Implemented AI-powered auto-exit rules and real-time PnL monitoring"
+      ],
+      "keywords": ["React", "Vite", "Fastify", "TypeScript", "OpenAI", "Polymarket"],
+      "startDate": "2024",
+      "endDate": "2024"
+    },
+    {
+      "name": "Path @ Penn Redesign",
+      "description": "UX redesign of Penn's course registration system",
+      "highlights": [
+        "Conducted user interviews identifying key UX problems",
+        "Designed solution focusing on workflow optimization", 
+        "Built interactive Figma prototype with improved navigation"
+      ],
+      "keywords": ["Figma", "UX/UI Design", "User Research", "Prototyping"],
+      "url": "https://www.figma.com/proto/ThV52QlckxxVESu9JZ2hTG/Juno---Design?node-id=34-2&t=MEDbjHMILsmR8nrj-1",
+      "startDate": "2024",
+      "endDate": "2024"
+    },
+    {
+      "name": "VeriRAG", 
+      "description": "Open standard and Python library for tamper-proof AI audit trails",
+      "highlights": [
+        "Created cryptographic verification system using Merkle trees",
+        "Designed for EU AI Act Article 12 compliance",
+        "Built 3-line integration with CLI verifier and LangChain callbacks"
+      ],
+      "keywords": ["Python", "Merkle trees", "LangChain", "Claude API", "SHA-256"],
+      "startDate": "2024",
+      "endDate": "2024"
+    },
+    {
+      "name": "DealScout",
+      "description": "Chrome Extension for real estate listing analysis",
+      "highlights": [
+        "Developed Chrome extension for ROI analysis of Zillow listings",
+        "Secured $27K+ in grant funding at 2025 Bittensor Endgame Summit",
+        "Integrated Gemini LLM for property insights chat interface"
+      ],
+      "keywords": ["Gemini", "Nextplace.ai"],
+      "url": "https://github.com/gurubazawada/extension",
+      "startDate": "2024", 
+      "endDate": "2025"
+    },
+    {
+      "name": "Pennstagram",
+      "description": "Instagram clone + RAG chatbot — NETS 2120 final project",
+      "highlights": [
+        "Built scalable Instagram-style web app with React and Kafka",
+        "Implemented personalized content ranking using Spark-based algorithms",
+        "Integrated RAG chatbot with LangChain and ChromaDB"
+      ],
+      "keywords": ["React", "Node/Express", "AWS S3", "AWS EMR", "AWS EC2", "ChromaDB", "Apache Kafka", "Apache Spark", "Langchain.js", "Docker"],
+      "startDate": "2024",
+      "endDate": "2024"
+    },
+    {
+      "name": "Lucidity",
+      "description": "Chrome Extension using ML to block unproductive websites",
+      "highlights": [
+        "Boosted student productivity by 24% through ML-powered website blocking",
+        "Built TF-IDF classification model with NumPy, Pandas, and NLTK", 
+        "Achieved provisional patent (No. 63005219) and multiple awards"
+      ],
+      "keywords": ["HTML/JS/CSS", "Node.js", "NumPy", "Pandas", "NLTK"],
+      "url": "https://github.com/Neontus/Lucidity_Extension",
+      "startDate": "2023",
+      "endDate": "2024"
+    }
+  ],
+  "awards": [
+    {
+      "title": "Provisional Patent",
+      "date": "2024",
+      "awarder": "USPTO",
+      "summary": "Patent application No. 63005219 for Lucidity Chrome Extension"
+    },
+    {
+      "title": "Thinkfund Grant", 
+      "date": "2024",
+      "awarder": "City of Palo Alto",
+      "summary": "Grant awarded for Lucidity productivity enhancement technology"
+    },
+    {
+      "title": "Conrad Challenge International Finalist",
+      "date": "2024",
+      "awarder": "Conrad Foundation",
+      "summary": "International finalist for Lucidity innovation"
+    },
+    {
+      "title": "Diamond Challenge Regional Semi-Finalist",
+      "date": "2024", 
+      "awarder": "Diamond Challenge",
+      "summary": "Regional semi-finalist for entrepreneurship competition"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Technical",
+      "keywords": ["Signal Processing", "Optimization", "AI/ML", "Quantitative Finance", "Physics"]
+    },
+    {
+      "name": "Personal",
+      "keywords": ["DJ", "Running", "Music", "Beli", "Window Shopping"]
+    }
+  ]
+}
