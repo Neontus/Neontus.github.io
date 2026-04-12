@@ -1,11 +1,13 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Container } from "@/components/layout/container";
 import { fadeInUp } from "@/lib/animations";
 import { projects } from "@/data/projects";
 import { useState } from "react";
-import { ChevronRight, Mail, Linkedin, Github } from "lucide-react";
+import { ChevronRight } from "lucide-react";
+import { IconLink } from "@/components/ui/icon-link";
+import { contactLinks } from "@/constants/links";
 
 /**
  * FULL BENTO LAYOUT (Option A)
@@ -30,23 +32,6 @@ const aboutBullets = [
   },
 ];
 
-const contactLinks = [
-  {
-    icon: Mail,
-    label: "email",
-    href: "mailto:junokimzone@gmail.com",
-  },
-  {
-    icon: Linkedin,
-    label: "linkedin",
-    href: "https://linkedin.com/in/junokimzone",
-  },
-  {
-    icon: Github,
-    label: "github",
-    href: "https://github.com/Neontus",
-  },
-];
 
 export default function Home() {
   const [expandedId, setExpandedId] = useState<number | null>(null);
@@ -139,7 +124,7 @@ export default function Home() {
                     onClick={() =>
                       setExpandedId(expandedId === project.id ? null : project.id)
                     }
-                    className="w-full text-left group"
+                    className="w-full text-left group focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-foreground rounded-sm"
                   >
                     <div className="flex items-start justify-between gap-3 mb-1">
                       <div className="flex-1 min-w-0">
@@ -159,12 +144,14 @@ export default function Home() {
                       </motion.div>
                     </div>
                   </button>
+                  <AnimatePresence initial={false}>
                   {expandedId === project.id && (
                     <motion.div
                       initial={{ opacity: 0, height: 0 }}
                       animate={{ opacity: 1, height: "auto" }}
                       exit={{ opacity: 0, height: 0 }}
-                      className="mt-3 pt-3 border-t border-border"
+                      transition={{ duration: 0.25, ease: [0.25, 0.4, 0.25, 1] }}
+                      className="mt-3 pt-3 border-t border-border overflow-hidden"
                     >
                       <div className="space-y-2">
                         {project.details.map((detail, idx) => (
@@ -188,6 +175,7 @@ export default function Home() {
                       </div>
                     </motion.div>
                   )}
+                  </AnimatePresence>
                 </motion.div>
               ))}
             </div>
@@ -211,16 +199,7 @@ export default function Home() {
               </motion.h2>
               <motion.div variants={fadeInUp} className="flex flex-col gap-4">
                 {contactLinks.map((link, i) => (
-                  <a
-                    key={i}
-                    href={link.href}
-                    target={link.href.startsWith("mailto") ? undefined : "_blank"}
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors text-sm"
-                  >
-                    <link.icon size={14} />
-                    <span>{link.label}</span>
-                  </a>
+                  <IconLink key={i} size="sm" {...link} />
                 ))}
               </motion.div>
             </div>

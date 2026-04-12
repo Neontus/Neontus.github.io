@@ -1,0 +1,51 @@
+{
+  "name": "Juno Kim",
+  "title": "Computer Science Student",
+  "tagline": "CS @ UPenn. Signal processing, optimization, AI/ML.",
+  "education": {
+    "institution": "University of Pennsylvania",
+    "degree": "Bachelor of Science in Engineering",
+    "major": "Computer Science",
+    "status": "current"
+  },
+  "interests": [
+    "Signal Processing",
+    "Optimization", 
+    "Artificial Intelligence",
+    "Machine Learning",
+    "Music",
+    "Quantitative Finance",
+    "Physics"
+  ],
+  "skills": {
+    "programming_languages": ["TypeScript", "JavaScript", "Python", "Rust", "HTML/CSS"],
+    "frameworks_libraries": ["React", "Next.js", "Node.js", "Express", "Vite", "LangChain"],
+    "tools_platforms": ["Chrome Extensions", "AWS (S3, EC2, EMR)", "Apache Kafka", "Apache Spark", "Docker", "Figma"],
+    "databases": ["ChromaDB", "Supabase", "Redis"],
+    "specializations": ["Full Stack Development", "UX/UI Design", "Machine Learning", "Cryptography", "Real Estate Technology"]
+  },
+  "personal": {
+    "activities": ["DJ", "Running", "Beli enthusiast", "Window shopping"],
+    "recent_race": {
+      "name": "Saucony Love Run Philly",
+      "date": "2026-03-29",
+      "distance": "13.1 miles",
+      "time": "1:57:49",
+      "pace": "8:59/mile"
+    }
+  },
+  "contact": {
+    "email": "junokimzone@gmail.com",
+    "linkedin": "https://linkedin.com/in/junokimzone", 
+    "github": "https://github.com/Neontus"
+  },
+  "projects_count": 6,
+  "key_achievements": [
+    "Provisional patent application (No. 63005219) for Lucidity Chrome Extension",
+    "Secured $27K+ in grant funding for DealScout at Bittensor Endgame Summit", 
+    "Awarded City of Palo Alto's Thinkfund Grant",
+    "Conrad Challenge International Finalist",
+    "Diamond Challenge Regional Semi-Finalist",
+    "24% productivity improvement demonstrated with Lucidity extension"
+  ]
+}

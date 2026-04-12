@@ -21,7 +21,7 @@ export function ProjectListItem({
     <motion.div variants={fadeInUp} className="border-b border-border">
       <button
         onClick={onToggle}
-        className="w-full py-4 flex items-center justify-between gap-4 text-left group"
+        className="w-full py-4 flex items-center justify-between gap-4 text-left group focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-foreground rounded-sm"
       >
         <div className="flex items-baseline justify-between flex-1 min-w-0 gap-4">
           <h3 className="font-serif text-xl sm:text-2xl flex-shrink-0">

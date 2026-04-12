@@ -8,9 +8,9 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        serif: ["Fraunces", "serif"],
-        sans: ["Space Grotesk", "sans-serif"],
-        mono: ["JetBrains Mono", "monospace"],
+        serif: ["var(--font-serif)", "serif"],
+        sans: ["var(--font-sans)", "sans-serif"],
+        mono: ["var(--font-mono)", "monospace"],
       },
       spacing: {
         section: "8rem",
@@ -32,6 +32,7 @@ const config: Config = {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
         },
+        ink: "hsl(var(--ink))",
       },
       borderRadius: {
         lg: "var(--radius)",

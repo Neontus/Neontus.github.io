@@ -7,6 +7,9 @@ export interface Project {
   github?: string;
   demo?: string;
   twitter?: string;
+  slides?: string;
+  video1?: string;
+  video2?: string;
   hidden?: boolean;
 }
 
@@ -24,6 +27,21 @@ export const projects: Project[] = [
   },
   {
     id: 2,
+    title: "Path @ Penn Redesign",
+    description: "UX redesign of Penn's course registration system",
+    technologies: ["Figma", "UX/UI Design", "User Research", "Prototyping"],
+    details: [
+      "Conducted user interviews identifying key problems: cluttered landing page, fragmented workflows, and poor visual hierarchy",
+      "Designed solution focusing on expediting repetitive tasks, consolidating external tools, and prioritizing common workflows with clear actionable steps",
+      "Built interactive Figma prototype with improved landing page management, streamlined course browsing, and integrated Penn Course Plan timetable view",
+    ],
+    demo: "https://www.figma.com/proto/ThV52QlckxxVESu9JZ2hTG/Juno---Design?node-id=34-2&t=MEDbjHMILsmR8nrj-1",
+    slides: "https://github.com/Neontus/Neontus.github.io/releases/download/path-penn-redesign/slides.pdf",
+    video1: "https://github.com/Neontus/Neontus.github.io/releases/download/path-penn-redesign/demo1.mov",
+    video2: "https://github.com/Neontus/Neontus.github.io/releases/download/path-penn-redesign/demo2.mp4",
+  },
+  {
+    id: 3,
     title: "VeriRAG",
     description: "Open standard and Python library for tamper-proof AI audit trails",
     technologies: ["Python", "Merkle trees", "LangChain", "Claude API", "SHA-256"],
@@ -34,7 +52,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: 3,
+    id: 4,
     title: "DealScout",
     description: "Chrome Extension for real estate listing analysis",
     technologies: ["Gemini", "Nextplace.ai"],
@@ -47,7 +65,7 @@ export const projects: Project[] = [
     twitter: "https://x.com/Dorm_DAO/status/1889078965148532917",
   },
   {
-    id: 4,
+    id: 5,
     title: "Pennstagram",
     description: "Instagram clone + RAG chatbot — NETS 2120 final project",
     technologies: [
@@ -68,7 +86,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: 5,
+    id: 6,
     title: "Lucidity",
     description: "Chrome Extension using ML to block unproductive websites",
     technologies: ["HTML/JS/CSS", "Node.js", "NumPy", "Pandas", "NLTK"],
@@ -82,7 +100,7 @@ export const projects: Project[] = [
     demo: "https://lucidity.ninja",
   },
   {
-    id: 6,
+    id: 7,
     title: "Stockify",
     description: "A way for artists to monetize their IP through a stock exchange",
     technologies: ["Next.js", "Supabase", "Redis", "Express"],
@@ -95,7 +113,7 @@ export const projects: Project[] = [
     hidden: true,
   },
   {
-    id: 7,
+    id: 8,
     title: "RustyDJ",
     description: "Open-source DJ software built in Rust",
     technologies: ["Rust"],

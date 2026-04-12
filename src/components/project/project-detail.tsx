@@ -3,8 +3,9 @@
 import { motion } from "framer-motion";
 import { expandCollapse } from "@/lib/animations";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Github, Twitter } from "lucide-react";
+import { ExternalLink, Github, Twitter, FileText, Video } from "lucide-react";
 import type { Project } from "@/data/projects";
+import { IconLink } from "@/components/ui/icon-link";
 
 interface ProjectDetailProps {
   project: Project;
@@ -33,39 +34,24 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
               <Badge key={tech}>{tech}</Badge>
             ))}
           </div>
-          <div className="flex gap-3">
+          <div className="flex flex-wrap gap-3">
             {project.github && (
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
-              >
-                <Github size={14} />
-                source
-              </a>
+              <IconLink size="sm" href={project.github} icon={Github} label="source" />
             )}
             {project.demo && (
-              <a
-                href={project.demo}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
-              >
-                <ExternalLink size={14} />
-                demo
-              </a>
+              <IconLink size="sm" href={project.demo} icon={ExternalLink} label="demo" />
             )}
             {project.twitter && (
-              <a
-                href={project.twitter}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
-              >
-                <Twitter size={14} />
-                x
-              </a>
+              <IconLink size="sm" href={project.twitter} icon={Twitter} label="x" />
+            )}
+            {project.slides && (
+              <IconLink size="sm" href={project.slides} icon={FileText} label="slides" />
+            )}
+            {project.video1 && (
+              <IconLink size="sm" href={project.video1} icon={Video} label="vid 1" />
+            )}
+            {project.video2 && (
+              <IconLink size="sm" href={project.video2} icon={Video} label="vid 2" />
             )}
           </div>
         </div>

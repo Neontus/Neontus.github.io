@@ -1,0 +1,87 @@
+[
+  {
+    "id": 1,
+    "title": "Taurus",
+    "description": "Chrome extension injecting Polymarket prediction markets into X/Twitter",
+    "technologies": ["React", "Vite", "Fastify", "TypeScript", "OpenAI", "Polymarket"],
+    "details": [
+      "Built a Chrome extension (Manifest V3) using React + Vite that injects real-time Polymarket prediction market widgets into X.com tweets via Shadow DOM for full style isolation",
+      "Built a Fastify/TypeScript backend with hybrid tweet-to-market matching using 40% keyword + 60% semantic scoring, trade execution via Polymarket CLOB, and page-level AI insights powered by GPT-4o-mini",
+      "Implemented auto-exit rules with AI confirmation, dual wallet support (guest PolyPoints vs MetaMask + USDC), and real-time position tracking with PnL monitoring"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Path @ Penn Redesign",
+    "description": "UX redesign of Penn's course registration system",
+    "technologies": ["Figma", "UX/UI Design", "User Research", "Prototyping"],
+    "details": [
+      "Conducted user interviews identifying key problems: cluttered landing page, fragmented workflows, and poor visual hierarchy",
+      "Designed solution focusing on expediting repetitive tasks, consolidating external tools, and prioritizing common workflows with clear actionable steps",
+      "Built interactive Figma prototype with improved landing page management, streamlined course browsing, and integrated Penn Course Plan timetable view"
+    ],
+    "demo": "https://www.figma.com/proto/ThV52QlckxxVESu9JZ2hTG/Juno---Design?node-id=34-2&t=MEDbjHMILsmR8nrj-1",
+    "slides": "https://github.com/Neontus/Neontus.github.io/releases/download/path-penn-redesign/slides.pdf",
+    "video1": "https://github.com/Neontus/Neontus.github.io/releases/download/path-penn-redesign/demo1.mov",
+    "video2": "https://github.com/Neontus/Neontus.github.io/releases/download/path-penn-redesign/demo2.mp4"
+  },
+  {
+    "id": 3,
+    "title": "VeriRAG",
+    "description": "Open standard and Python library for tamper-proof AI audit trails",
+    "technologies": ["Python", "Merkle trees", "LangChain", "Claude API", "SHA-256"],
+    "details": [
+      "Open-source cryptographic verification for RAG/LLM interaction logs: Merkle trees prove logs haven't been modified — a gap no existing AI observability platform (Arize, LangSmith, etc.) addresses.",
+      "Designed for EU AI Act Article 12 tamper-resistant logging and compliance: 3-line integration, CLI verifier (verirag verify), LangChain callback + Claude API wrapper; canonical log schema with request/response hashes and proof bundles.",
+      "Open-source-first strategy (ship library → ecosystem → productize); positioning analogous to VeritasChain VCP for algorithmic trading, but for general RAG/LLM workloads."
+    ]
+  },
+  {
+    "id": 4,
+    "title": "DealScout",
+    "description": "Chrome Extension for real estate listing analysis",
+    "technologies": ["Gemini", "Nextplace.ai"],
+    "details": [
+      "Developed a Chrome extension to evaluate ROI of Zillow property listings by scraping real estate data, computing valuations with Nextplace.ai, and integrating with Gemini LLM",
+      "Secured $27K+ in grant funding by presenting at the 2025 Bittensor Endgame Summit, highlighting its value for decentralized real estate intelligence",
+      "Integrated Gemini to power an in-extension chat interface offering further property insights using scraped listing data"
+    ],
+    "github": "https://github.com/gurubazawada/extension",
+    "twitter": "https://x.com/Dorm_DAO/status/1889078965148532917"
+  },
+  {
+    "id": 5,
+    "title": "Pennstagram",
+    "description": "Instagram clone + RAG chatbot — NETS 2120 final project",
+    "technologies": [
+      "React",
+      "Node/Express",
+      "AWS S3",
+      "AWS EMR",
+      "AWS EC2",
+      "ChromaDB",
+      "Apache Kafka",
+      "Apache Spark",
+      "Langchain.js",
+      "Docker"
+    ],
+    "details": [
+      "Built a scalable Instagram-style web app with React supporting real-time social feed using Kafka, hosting backend services on EC2 with Docker, image upload to S3, and RAG chatbot by integrating Langchain",
+      "Enabled efficient personalized content ranking using Spark-based adsorption algorithm by processing graph data on Apache Spark and streaming updates with Kafka"
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Lucidity",
+    "description": "Chrome Extension using ML to block unproductive websites",
+    "technologies": ["HTML/JS/CSS", "Node.js", "NumPy", "Pandas", "NLTK"],
+    "details": [
+      "Developed a Chrome Extension with Node.js backend to block unproductive websites, boosting student productivity by 24%",
+      "Built ML model to classify websites based on textual content using TF-IDF with NumPy, Pandas, and NLTK",
+      "Deployed and piloted at Los Altos Christian Schools, leading to a provisional patent application (No. 63005219)",
+      "Awarded City of Palo Alto's Thinkfund Grant, Conrad Challenge International Finalist, Diamond Challenge Regional Semi-Finalist"
+    ],
+    "github": "https://github.com/Neontus/Lucidity_Extension",
+    "demo": "https://lucidity.ninja"
+  }
+]

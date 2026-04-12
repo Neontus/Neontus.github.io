@@ -20,21 +20,22 @@ export function Hero() {
                 variants={textReveal}
                 initial="hidden"
                 animate="visible"
-                className="inline-block mr-4"
+                className="inline-block mr-2"
               >
                 {word}
               </motion.span>
             ))}
           </h1>
-          <motion.p
+          <motion.div
             variants={fadeInUp}
             initial="hidden"
             animate="visible"
             transition={{ delay: 0.5 }}
-            className="text-muted-foreground text-lg sm:text-xl max-w-lg"
+            className="text-muted-foreground text-lg sm:text-xl max-w-lg space-y-2 font-mono uppercase tracking-wider"
           >
-            cs @ upenn. signal processing, optimization, ai/ml.
-          </motion.p>
+            <p>CS • UPENN</p>
+            <p>SIGNAL PROCESSING • OPTIMIZATION • ML</p>
+          </motion.div>
         </div>
       </Container>
       <motion.div
