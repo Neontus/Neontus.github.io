@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 import { useState } from "react";
 import { projects } from "@/data/projects";
 import { latestActivity } from "@/data/activity";
@@ -352,6 +353,27 @@ export default function Home() {
             <CurrentlyWidget activity={latestActivity} />
           </section>
         )}
+        <section aria-labelledby="writing-heading">
+          <h2 id="writing-heading" className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-4">
+            writing
+          </h2>
+          <Link
+            href="/inference"
+            className="group block border-y border-border py-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink"
+          >
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <h3 className="font-serif text-sm transition-colors group-hover:text-ink">
+                  LLM inference from first principles
+                </h3>
+                <p className="mt-1 font-mono text-[10px] leading-relaxed text-muted-foreground">
+                  a running systems lab notebook
+                </p>
+              </div>
+              <ChevronRight size={11} className="mt-1 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5" />
+            </div>
+          </Link>
+        </section>
         <section aria-labelledby="work-heading">
           <h2 id="work-heading" className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-4">
             work
@@ -502,6 +524,28 @@ export default function Home() {
                   </motion.article>
                 ))}
               </div>
+            </section>
+
+            <section aria-labelledby="writing-heading-desktop" className="mb-8">
+              <h2 id="writing-heading-desktop" className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-5 pt-2 border-t border-border">
+                writing
+              </h2>
+              <Link
+                href="/inference"
+                className="group block border-b border-border pb-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink"
+              >
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <h3 className="font-serif text-sm transition-colors group-hover:text-ink">
+                      LLM inference from first principles
+                    </h3>
+                    <p className="mt-1 font-mono text-[10px] leading-relaxed text-muted-foreground">
+                      a running systems lab notebook
+                    </p>
+                  </div>
+                  <ChevronRight size={11} className="mt-1 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5" />
+                </div>
+              </Link>
             </section>
 
             {/* Experience — only rendered when items exist */}

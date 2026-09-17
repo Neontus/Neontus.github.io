@@ -107,3 +107,125 @@
   from { opacity: 0; }
   to { opacity: 1; }
 }
+
+/* Technical field notes: long-form type without introducing a second design system. */
+.inference-prose {
+  color: hsl(var(--foreground));
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.inference-prose > * + * {
+  margin-top: 1.35rem;
+}
+
+.inference-prose h1 {
+  display: none;
+}
+
+.inference-prose h2,
+.inference-prose h3 {
+  font-family: var(--font-serif), serif;
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  scroll-margin-top: 2rem;
+}
+
+.inference-prose h2 {
+  margin-top: 3.5rem;
+  font-size: 1.75rem;
+}
+
+.inference-prose h3 {
+  margin-top: 2.5rem;
+  font-size: 1.3rem;
+}
+
+.inference-prose p,
+.inference-prose li {
+  max-width: 70ch;
+}
+
+.inference-prose p,
+.inference-prose li,
+.inference-prose blockquote {
+  color: hsl(var(--muted-foreground));
+}
+
+.inference-prose strong {
+  color: hsl(var(--foreground));
+  font-weight: 500;
+}
+
+.inference-prose a {
+  color: hsl(var(--ink));
+  text-decoration: underline;
+  text-decoration-color: hsl(var(--ink) / 0.35);
+  text-underline-offset: 0.2em;
+}
+
+.inference-prose ul,
+.inference-prose ol {
+  padding-left: 1.25rem;
+}
+
+.inference-prose li + li {
+  margin-top: 0.45rem;
+}
+
+.inference-prose ul {
+  list-style: square;
+}
+
+.inference-prose ol {
+  list-style: decimal-leading-zero;
+}
+
+.inference-prose blockquote {
+  border-left: 2px solid hsl(var(--ink));
+  padding-left: 1.25rem;
+  font-family: var(--font-serif), serif;
+  font-size: 1.2rem;
+}
+
+.inference-prose code {
+  border-radius: 0.2rem;
+  background: hsl(var(--muted));
+  padding: 0.12rem 0.3rem;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.84em;
+}
+
+.inference-prose pre {
+  overflow-x: auto;
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  background: hsl(var(--muted) / 0.65);
+  padding: 1rem;
+  line-height: 1.65;
+}
+
+.inference-prose pre code {
+  background: transparent;
+  padding: 0;
+}
+
+.inference-prose table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.76rem;
+}
+
+.inference-prose th,
+.inference-prose td {
+  border-bottom: 1px solid hsl(var(--border));
+  padding: 0.65rem 0.5rem;
+  text-align: left;
+}
+
+.inference-prose th {
+  color: hsl(var(--foreground));
+  font-weight: 500;
+}
