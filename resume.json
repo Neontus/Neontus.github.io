@@ -84,18 +84,6 @@
       "endDate": "2024"
     },
     {
-      "name": "VeriRAG", 
-      "description": "Open standard and Python library for tamper-proof AI audit trails",
-      "highlights": [
-        "Created cryptographic verification system using Merkle trees",
-        "Designed for EU AI Act Article 12 compliance",
-        "Built 3-line integration with CLI verifier and LangChain callbacks"
-      ],
-      "keywords": ["Python", "Merkle trees", "LangChain", "Claude API", "SHA-256"],
-      "startDate": "2024",
-      "endDate": "2024"
-    },
-    {
       "name": "DealScout",
       "description": "Chrome Extension for real estate listing analysis",
       "highlights": [
