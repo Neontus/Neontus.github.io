@@ -41,17 +41,6 @@ export const projects: Project[] = [
     video2: "https://github.com/Neontus/Neontus.github.io/releases/download/path-penn-redesign/demo2.mp4",
   },
   {
-    id: 3,
-    title: "VeriRAG",
-    description: "Open standard and Python library for tamper-proof AI audit trails",
-    technologies: ["Python", "Merkle trees", "LangChain", "Claude API", "SHA-256"],
-    details: [
-      "Open-source cryptographic verification for RAG/LLM interaction logs: Merkle trees prove logs haven't been modified — a gap no existing AI observability platform (Arize, LangSmith, etc.) addresses.",
-      "Designed for EU AI Act Article 12 tamper-resistant logging and compliance: 3-line integration, CLI verifier (verirag verify), LangChain callback + Claude API wrapper; canonical log schema with request/response hashes and proof bundles.",
-      "Open-source-first strategy (ship library → ecosystem → productize); positioning analogous to VeritasChain VCP for algorithmic trading, but for general RAG/LLM workloads.",
-    ],
-  },
-  {
     id: 4,
     title: "DealScout",
     description: "Chrome Extension for real estate listing analysis",
