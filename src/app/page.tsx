@@ -6,6 +6,8 @@ import { useState } from "react";
 import { projects } from "@/data/projects";
 import { latestActivity } from "@/data/activity";
 import type { Activity } from "@/data/activity";
+import { writingLinks } from "@/data/writing-links";
+import type { WritingLink } from "@/data/writing-links";
 import { contactLinks } from "@/constants/links";
 import { IconLink } from "@/components/ui/icon-link";
 import { aboutBullets, RunnerLink } from "@/data/about";
@@ -233,6 +235,45 @@ function ProjectRow({
   );
 }
 
+function WritingLinkRow({ item }: { item: WritingLink }) {
+  const content = (
+    <div className="flex items-start justify-between gap-4">
+      <div className="min-w-0">
+        <h3 className="font-serif text-sm leading-snug transition-colors group-hover:text-ink">
+          {item.title}
+        </h3>
+        <p className="mt-1 font-mono text-[10px] leading-relaxed text-muted-foreground">
+          {item.meta}
+        </p>
+      </div>
+      {item.external ? (
+        <ExternalLink
+          size={11}
+          className="mt-1 shrink-0 text-muted-foreground transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+        />
+      ) : (
+        <ChevronRight
+          size={11}
+          className="mt-1 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5"
+        />
+      )}
+    </div>
+  );
+
+  const className =
+    "group block border-b border-border py-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink";
+
+  return item.external ? (
+    <a href={item.href} target="_blank" rel="noopener noreferrer" className={className}>
+      {content}
+    </a>
+  ) : (
+    <Link href={item.href} className={className}>
+      {content}
+    </Link>
+  );
+}
+
 // ─── Experience row ────────────────────────────────────────────────────────────
 
 function ExperienceRow({
@@ -357,22 +398,11 @@ export default function Home() {
           <h2 id="writing-heading" className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-4">
             writing
           </h2>
-          <Link
-            href="/inference"
-            className="group block border-y border-border py-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink"
-          >
-            <div className="flex items-start justify-between gap-4">
-              <div>
-                <h3 className="font-serif text-sm transition-colors group-hover:text-ink">
-                  LLM inference from first principles
-                </h3>
-                <p className="mt-1 font-mono text-[10px] leading-relaxed text-muted-foreground">
-                  a running systems lab notebook
-                </p>
-              </div>
-              <ChevronRight size={11} className="mt-1 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5" />
-            </div>
-          </Link>
+          <div className="border-t border-border">
+            {writingLinks.map((item) => (
+              <WritingLinkRow key={item.href} item={item} />
+            ))}
+          </div>
         </section>
         <section aria-labelledby="work-heading">
           <h2 id="work-heading" className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-4">
@@ -530,22 +560,11 @@ export default function Home() {
               <h2 id="writing-heading-desktop" className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-5 pt-2 border-t border-border">
                 writing
               </h2>
-              <Link
-                href="/inference"
-                className="group block border-b border-border pb-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink"
-              >
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <h3 className="font-serif text-sm transition-colors group-hover:text-ink">
-                      LLM inference from first principles
-                    </h3>
-                    <p className="mt-1 font-mono text-[10px] leading-relaxed text-muted-foreground">
-                      a running systems lab notebook
-                    </p>
-                  </div>
-                  <ChevronRight size={11} className="mt-1 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5" />
-                </div>
-              </Link>
+              <div className="border-t border-border">
+                {writingLinks.map((item) => (
+                  <WritingLinkRow key={item.href} item={item} />
+                ))}
+              </div>
             </section>
 
             {/* Experience — only rendered when items exist */}
