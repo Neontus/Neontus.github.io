@@ -493,7 +493,7 @@ export default function Home() {
       </div>
 
       {/* ── Desktop: 3-column bento ────────────────────────────────── */}
-      <div className="hidden lg:grid lg:h-screen lg:grid-cols-[1fr_1.25fr_0.75fr]">
+      <div className="hidden lg:grid lg:h-screen lg:grid-cols-[0.9fr_1.15fr_0.95fr]">
 
         {/* ── Col 1: Identity ─────────────────────────────────── */}
         <motion.div
@@ -556,7 +556,7 @@ export default function Home() {
           </section>
         </motion.div>
 
-        {/* ── Col 2: Work + Experience ─────────────────────────── */}
+        {/* ── Col 2: Work + Writing ────────────────────────────── */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -606,73 +606,75 @@ export default function Home() {
               </div>
             </section>
 
-            {/* Experience — only rendered when items exist */}
-            {experience.length > 0 && (
-              <section aria-labelledby="experience-heading-desktop">
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.7, duration: 0.4 }}
-                >
-                  <h2 id="experience-heading-desktop" className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-5 pt-2 border-t border-border">
-                    experience
-                  </h2>
-                  {experience.map((item, i) => (
-                    <motion.article
-                      key={item.id}
-                      initial={{ opacity: 0, y: 5 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.75 + i * 0.07, duration: 0.35, ease: [0.25, 0, 0, 1] }}
-                    >
-                      <ExperienceRow
-                        item={item}
-                        isExpanded={expandedExp === item.id}
-                        onToggle={() =>
-                          setExpandedExp(expandedExp === item.id ? null : item.id)
-                        }
-                      />
-                    </motion.article>
-                  ))}
-                </motion.div>
-              </section>
-            )}
           </div>
         </motion.div>
 
-        {/* ── Col 3: Currently + Contact ───────────────────────── */}
+        {/* ── Col 3: Experience + Activity + Contact ───────────── */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.5 }}
-          className="px-8 py-14 flex flex-col justify-between overflow-hidden"
+          className="px-8 py-14 flex flex-col overflow-hidden"
         >
-          {latestActivity && (
-            <section aria-labelledby="currently-heading-desktop">
-              <motion.h2
-                id="currently-heading-desktop"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.35, duration: 0.4 }}
-                className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-4"
-              >
-                currently
-              </motion.h2>
-              <motion.div
-                initial={{ opacity: 0, y: 4 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5, duration: 0.4 }}
-              >
-                <CurrentlyWidget activity={latestActivity} />
-              </motion.div>
-            </section>
-          )}
+          <div className="flex-1 overflow-y-auto scrollbar-thin pr-2">
+            {experience.length > 0 && (
+              <section aria-labelledby="experience-heading-desktop" className="mb-8">
+                <motion.h2
+                  id="experience-heading-desktop"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.35, duration: 0.4 }}
+                  className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-5"
+                >
+                  experience
+                </motion.h2>
+                {experience.map((item, i) => (
+                  <motion.article
+                    key={item.id}
+                    initial={{ opacity: 0, y: 5 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.5 + i * 0.07, duration: 0.35, ease: [0.25, 0, 0, 1] }}
+                  >
+                    <ExperienceRow
+                      item={item}
+                      isExpanded={expandedExp === item.id}
+                      onToggle={() =>
+                        setExpandedExp(expandedExp === item.id ? null : item.id)
+                      }
+                    />
+                  </motion.article>
+                ))}
+              </section>
+            )}
 
-          <section aria-labelledby="contact-heading-desktop">
+            {latestActivity && (
+              <section aria-labelledby="currently-heading-desktop" className="mb-8 border-t border-border pt-7">
+                <motion.h2
+                  id="currently-heading-desktop"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.4, duration: 0.4 }}
+                  className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-4"
+                >
+                  currently
+                </motion.h2>
+                <motion.div
+                  initial={{ opacity: 0, y: 4 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.55, duration: 0.4 }}
+                >
+                  <CurrentlyWidget activity={latestActivity} />
+                </motion.div>
+              </section>
+            )}
+          </div>
+
+          <section aria-labelledby="contact-heading-desktop" className="shrink-0 border-t border-border pt-7 mt-8">
             <motion.h2
               id="contact-heading-desktop"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.4, duration: 0.4 }}
+              transition={{ delay: 0.45, duration: 0.4 }}
               className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-4"
             >
               links
@@ -681,8 +683,8 @@ export default function Home() {
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 0.55, duration: 0.4 }}
-                className="flex flex-col gap-3"
+                transition={{ delay: 0.6, duration: 0.4 }}
+                className="flex flex-wrap gap-x-5 gap-y-3"
               >
                 {contactLinks.map((link, i) => (
                   <IconLink key={i} size="sm" {...link} />
@@ -693,8 +695,8 @@ export default function Home() {
               <motion.p
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 0.7, duration: 0.4 }}
-                className="font-mono text-[10px] text-muted-foreground mt-10"
+                transition={{ delay: 0.75, duration: 0.4 }}
+                className="font-mono text-[10px] text-muted-foreground mt-6"
               >
                 designed & built by juno
               </motion.p>
