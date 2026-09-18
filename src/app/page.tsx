@@ -36,17 +36,56 @@ interface ExperienceItem {
 }
 
 const experience: ExperienceItem[] = [
-  // Example:
-  // {
-  //   id: 1,
-  //   role: "Software Engineer Intern",
-  //   company: "Acme Corp",
-  //   period: "Summer 2025",
-  //   details: [
-  //     "Built X using Y, achieving Z.",
-  //   ],
-  //   link: "https://acme.com",
-  // },
+  {
+    id: 1,
+    role: "Software Engineering Intern",
+    company: "Palantir",
+    period: "Jun - Aug 2026",
+    details: [
+      "Refactored a Java microservice into an in-process library, eliminating one network hop and reclaiming one JVM per edge stack.",
+      "Migrated microservice operations to multi-tenant infrastructure, removing a single-tenant service dependency and enabling tenant-aware execution.",
+    ],
+  },
+  {
+    id: 2,
+    role: "Software Engineering Intern",
+    company: "Standard Chartered Ventures (Libeara)",
+    period: "May - Aug 2025",
+    details: [
+      "Led QA by building an automated Playwright suite across unit, integration, and end-to-end tests, reducing evidence collection time by 35%.",
+      "Integrated with RWA.xyz through API calls and serverless functions, increasing token visibility.",
+    ],
+  },
+  {
+    id: 3,
+    role: "Software Engineering Intern",
+    company: "Orion Advisor Solutions",
+    period: "Jun - Sep 2024",
+    details: [
+      "Automated financial report comparison for 150+ advisors with a Python OCR tool, expediting processing for 8,000+ documents.",
+      "Accelerated the core SaaS repository's migration to an updated database, reducing data access times by 50%.",
+    ],
+  },
+  {
+    id: 4,
+    role: "Software Engineering Intern",
+    company: "Lockheed Martin",
+    period: "Jun 2022 - Jul 2023",
+    details: [
+      "Simulated co-alignment of AIA images to IRIS rasters for 100M+ solar scans by training a U-Net CNN on LMSAL's high-performance computing cluster.",
+      "Improved raster analysis accuracy by 27% using the simulated scans supporting SDO2IRIS2 (Sainz Dalda et al., 2026).",
+    ],
+  },
+  {
+    id: 5,
+    role: "Data Engineering Intern",
+    company: "The Learning Agency Lab",
+    period: "Jun 2021 - Jun 2022",
+    details: [
+      "Directed data acquisition for 14,000+ entries in a multimodal dataset and developed a Python library for large-scale text corpora audits with NLTK and Pandas.",
+      "Created a Python NLP model to analyze hierarchical sentence structure, delivering personalized feedback on standardized writing assessments with 87% accuracy.",
+    ],
+  },
 ];
 
 // ─── Currently widget ──────────────────────────────────────────────────────────
