@@ -7,7 +7,12 @@ export interface RoadmapStep {
 
 export const inferenceRoadmap: RoadmapStep[] = [
   { number: "00", title: "Orientation", status: "complete", slug: "becoming-cracked-at-ml-inference" },
-  { number: "01", title: "Transformer internals", status: "current" },
+  {
+    number: "01",
+    title: "Transformer internals",
+    status: "current",
+    slug: "session-1-understanding-basic-gpt2-architecture",
+  },
   { number: "02", title: "Naive autoregressive inference", status: "planned" },
   { number: "03", title: "KV caching", status: "planned" },
   { number: "04", title: "FLOPs and memory", status: "planned" },
