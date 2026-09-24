@@ -165,6 +165,72 @@
   text-underline-offset: 0.2em;
 }
 
+.inference-prose .concept-term {
+  position: relative;
+  border-radius: 0.2rem;
+  color: hsl(var(--foreground));
+  cursor: help;
+  font-style: normal;
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: hsl(var(--ink) / 0.65);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.24em;
+  transition:
+    background-color 150ms ease,
+    color 150ms ease;
+}
+
+.inference-prose .concept-term::after {
+  position: absolute;
+  z-index: 30;
+  bottom: calc(100% + 0.7rem);
+  left: 50%;
+  width: max-content;
+  max-width: min(22rem, calc(100vw - 2rem));
+  padding: 0.65rem 0.75rem;
+  border: 1px solid hsl(var(--border));
+  border-radius: 0.35rem;
+  background: hsl(var(--foreground));
+  box-shadow: 0 0.55rem 1.5rem hsl(var(--background) / 0.18);
+  color: hsl(var(--background));
+  content: attr(data-definition);
+  font-family: var(--font-sans), sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 1.5;
+  opacity: 0;
+  pointer-events: none;
+  text-align: left;
+  text-decoration: none;
+  transform: translate(-50%, 0.25rem);
+  transition:
+    opacity 150ms ease,
+    transform 150ms ease,
+    visibility 150ms ease;
+  visibility: hidden;
+  white-space: normal;
+}
+
+.inference-prose .concept-term:hover,
+.inference-prose .concept-term:focus-visible {
+  background: hsl(var(--ink) / 0.08);
+  color: hsl(var(--ink));
+}
+
+.inference-prose .concept-term:hover::after,
+.inference-prose .concept-term:focus-visible::after {
+  opacity: 1;
+  transform: translate(-50%, 0);
+  visibility: visible;
+}
+
+.inference-prose .concept-term:focus-visible {
+  outline: 2px solid hsl(var(--ink));
+  outline-offset: 3px;
+}
+
 .inference-prose ul,
 .inference-prose ol {
   padding-left: 1.25rem;
@@ -228,4 +294,21 @@
 .inference-prose th {
   color: hsl(var(--foreground));
   font-weight: 500;
+}
+
+@media (max-width: 47.5rem) {
+  .inference-prose .concept-term::after {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+    width: auto;
+    max-width: none;
+    transform: translateY(0.25rem);
+  }
+
+  .inference-prose .concept-term:hover::after,
+  .inference-prose .concept-term:focus-visible::after {
+    transform: translateY(0);
+  }
 }
