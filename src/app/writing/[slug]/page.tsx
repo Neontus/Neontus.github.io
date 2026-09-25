@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ExternalLink } from "lucide-react";
+import { ZoomableProse } from "@/components/writing/zoomable-prose";
 import { getAllWritingPosts, getWritingPost } from "@/lib/writing";
 
 interface PageProps {
@@ -63,7 +64,7 @@ export default async function WritingPostPage({ params }: PageProps) {
             )}
           </header>
 
-          <div className="inference-prose" dangerouslySetInnerHTML={{ __html: post.contentHtml }} />
+          <ZoomableProse html={post.contentHtml} />
         </article>
 
         <footer className="mt-16 border-t border-border pt-8">

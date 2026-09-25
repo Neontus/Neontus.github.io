@@ -277,6 +277,35 @@
   padding: 0;
 }
 
+.inference-prose .zoomable-image-button {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  background: hsl(var(--background));
+  cursor: zoom-in;
+  transition:
+    border-color 150ms ease,
+    box-shadow 150ms ease;
+}
+
+.inference-prose .zoomable-image-button:hover {
+  border-color: hsl(var(--ink) / 0.65);
+  box-shadow: 0 0.55rem 1.5rem hsl(var(--foreground) / 0.08);
+}
+
+.inference-prose .zoomable-image-button:focus-visible {
+  outline: 2px solid hsl(var(--ink));
+  outline-offset: 3px;
+}
+
+.inference-prose .zoomable-image-button img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .inference-prose table {
   width: 100%;
   border-collapse: collapse;

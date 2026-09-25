@@ -63,6 +63,12 @@ export async function getWritingPost(slug: string): Promise<WritingPostWithConte
   const { post, body, draft } = readPost(file);
   if (draft) return null;
 
-  const contentHtml = await marked.parse(body, { gfm: true });
+  const parsedHtml = await marked.parse(body, { gfm: true });
+  const imageElement = "img";
+  const imagePattern = new RegExp(`<${imageElement}([^>]*)>`, "g");
+  const contentHtml = parsedHtml.replace(
+    imagePattern,
+    `<button type="button" class="zoomable-image-button" aria-label="Open image full screen"><${imageElement}$1></button>`,
+  );
   return { ...post, contentHtml };
 }
