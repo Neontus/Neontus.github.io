@@ -57,7 +57,7 @@ export default async function WritingPostPage({ params }: PageProps) {
                 rel="noopener noreferrer"
                 className="mt-6 inline-flex items-center gap-2 font-mono text-[10px] text-muted-foreground transition-colors hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink"
               >
-                matching code
+                code
                 <ExternalLink size={11} />
               </a>
             )}
@@ -79,4 +79,3 @@ export default async function WritingPostPage({ params }: PageProps) {
     </main>
   );
 }
-
